@@ -1,0 +1,57 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+}
+
+.tabs {
+  overflow: hidden;
+  background-color: #4CAF50;
+}
+
+.tablinks {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  color: white;
+}
+
+.tablinks:hover {
+  background-color: #45a049;
+}
+
+.tabcontent {
+  display: none;
+  padding: 20px;
+  background-color: white;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.tabcontent.active {
+  display: block;
+}
+
+input, select, button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  box-sizing: border-box;
+}
+
+#daftarRiwayat {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+#daftarRiwayat li {
+  background: #e0ffe0;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}

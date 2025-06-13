@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pesan Tiket Kereta</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <div class="tabs">
+    <button class="tablinks" onclick="openTab(event, 'booking')">Booking Tiket</button>
+    <button class="tablinks" onclick="openTab(event, 'pembelian')">Pembelian Tiket</button>
+    <button class="tablinks" onclick="openTab(event, 'riwayat')">Riwayat Pemesanan</button>
+  </div>
+
+  <!-- Tab Content -->
+  <div id="booking" class="tabcontent active">
+    <h2>Form Booking Tiket</h2>
+    <form id="formBooking">
+      <label>Nama Penumpang:</label><br/>
+      <input type="text" id="namaBooking" required/><br/><br/>
+
+      <label>Dari Stasiun:</label><br/>
+      <input type="text" id="dariBooking" required/><br/><br/>
+
+      <label>Ke Stasiun:</label><br/>
+      <input type="text" id="keBooking" required/><br/><br/>
+
+      <label>Tanggal Berangkat:</label><br/>
+      <input type="date" id="tanggalBooking" required/><br/><br/>
+
+      <button type="submit">Simpan Booking</button>
+    </form>
+  </div>
+
+  <div id="pembelian" class="tabcontent">
+    <h2>Form Pembelian Tiket</h2>
+    <form id="formPembelian">
+      <label>Nama Lengkap:</label><br/>
+      <input type="text" id="namaPembelian" required/><br/><br/>
+
+      <label>Jumlah Tiket:</label><br/>
+      <input type="number" id="jumlahTiket" min="1" required/><br/><br/>
+
+      <label>Kelas Tiket:</label><br/>
+      <select id="kelasTiket" required>
+        <option value="">-- Pilih Kelas --</option>
+        <option value="Ekonomi">Ekonomi</option>
+        <option value="Bisnis">Bisnis</option>
+        <option value="Eksekutif">Eksekutif</option>
+      </select><br/><br/>
+
+      <button type="submit">Beli Tiket</button>
+    </form>
+  </div>
+
+  <div id="riwayat" class="tabcontent">
+    <h2>Riwayat Pemesanan</h2>
+    <ul id="daftarRiwayat"></ul>
+  </div>
+
+  <script src="script.js"></script>
+
+  <!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script> 
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script> 
+
+<script>
+  // Konfigurasi Firebase dari console
+  const firebaseConfig = {
+  apiKey: "AIzaSyC5qs6RLTrBoDV5d709NVElt0Voawq1w24",
+  authDomain: "kereta-app.firebaseapp.com",
+  projectId: "kereta-app",
+  storageBucket: "kereta-app.firebasestorage.app",
+  messagingSenderId: "131956536286",
+  appId: "1:131956536286:web:d553da15137313be82e34f"
+};
+
+  // Inisialisasi Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  // Referensi ke database
+  const database = firebase.database();
+</script>
+</body>
+</html>
